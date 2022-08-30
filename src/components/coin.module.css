@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 40px;
+  font-size: 12px;
+  color: #212529;
+  border-bottom: 1px solid silver;
+}
+.container:last-child {
+  border: none;
+}
+.container img {
+  width: 30px;
+}
+.name {
+  width: 140px;
+  font-size: 14px;
+  text-align: left;
+  font-weight: bold;
+  color: #333333;
+}
+.symbol {
+  text-align: left;
+  width: 100px;
+}
+.price {
+  text-align: left;
+  width: 100px;
+}
+.green_price_change,
+.red_price_change {
+  width: 100px;
+  text-align: left;
+  font-weight: bold;
+}
+.green_price_change {
+  color: rgb(0, 204, 0);
+}
+.red_price_change {
+  color: rgb(255, 38, 38);
+}
