@@ -13,15 +13,16 @@ import Coin from "./Coin";
 const Landing = () => {
   const [coins, setCoins] = useState([]);
   const [search, setSearch] = useState("");
+  const [pageNumber, setPageNumber] = useState(1);
   useEffect(() => {
     const fetchAPI = async () => {
-      const data = await getCoin();
+      const data = await getCoin(pageNumber);
       setTimeout(() => {
-        setCoins(data);
+        setCoins(coins.concat(data));
       }, 1000);
     };
     fetchAPI();
-  }, []);
+  }, [pageNumber]);
 
   const searchHAndler = (e) => {
     setSearch(e.target.value);
@@ -29,6 +30,10 @@ const Landing = () => {
   const searchedCoins = coins.filter((coin) =>
     coin.name.toLowerCase().includes(search.toLowerCase())
   );
+  const handleNextPage = () => {
+    console.log("next page");
+    setPageNumber((prev) => prev + 1);
+  };
   return (
     <>
       <input
@@ -48,6 +53,7 @@ const Landing = () => {
           <Loader />
         )}
       </div>
+      <button onClick={handleNextPage}>Next page</button>
     </>
   );
 };
