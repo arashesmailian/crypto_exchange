@@ -31,7 +31,6 @@ const Landing = () => {
     coin.name.toLowerCase().includes(search.toLowerCase())
   );
   const handleNextPage = () => {
-    console.log("next page");
     setPageNumber((prev) => prev + 1);
   };
   return (
